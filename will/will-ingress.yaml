@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: will-ingress
+  namespace: dev
+  annotations:
+    traefik.ingress.kubernetes.io/router.entrypoints: web  # Port 80 (HTTP)
+spec:
+  rules:
+    - host: localhost  # Ou un host personnalisé (ex: will.local)
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: will-service
+                port:
+                  number: 80  # Port du Service (pas du conteneur !)
