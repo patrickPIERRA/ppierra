@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: will-app
 spec:
-  replicas: 10
+  replicas: 1
   selector:
     matchLabels:
       app: will
@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
         - name: will
-          image: wil42/playground:v2
+          image: wil42/playground:v1
           ports:
             - containerPort: 8888
