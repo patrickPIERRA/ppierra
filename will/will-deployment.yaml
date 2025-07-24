@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: will-app
 spec:
-  replicas: 1
+  replicas: 1000
   selector:
     matchLabels:
       app: will
